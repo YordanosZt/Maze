@@ -1,19 +1,47 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mazes</title>
 
-	<head>
-		<title>Maze</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <aside class="generators">
+                <h1 class="title">Maze Generators</h1>
+                <ul class="list">
+                    <li class="gen" id="backtracker">
+                        <button>Backtracker</button>
+                    </li>
+                    <li class="gen" id="prims">
+                        <button>Prims</button>
+                    </li>
+                    <li class="gen" id="binary">
+                        <button>Binary Tree</button>
+                    </li>
+                </ul>
+            </aside>
 
-		<link rel="stylesheet" href="style.css" />
-	</head>
+            <canvas id="mazeCanvas" width="610" height="610"></canvas>
 
-	<body>
-		<canvas id="mazeCanvas"></canvas>
+            <aside class="solvers">
+                <h1 class="title">Maze Solvers</h1>
+                <ul class="list">
+                    <li class="sol" id="wall_follower">
+                        <button>Wall Follower</button>
+                    </li>
+                </ul>
+            </aside>
+        </main>
 
-		<!-- Main Script /-->
-		<script src="main.js"></script>
+        <!-- Main Script /-->
+        <script src="main.js"></script>
 
-
-		<!-- Maze Scripts /-->
-	</body>
-
+        <!-- Maze Scripts /-->
+        <script src="./generators/backtracker.js"></script>
+        <script src="./generators/prims.js"></script>
+        <script src="./generators/binaryTree.js"></script>
+    </body>
 </html>
