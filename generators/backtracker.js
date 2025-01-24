@@ -1,6 +1,5 @@
-function backtracker_generateMaze(ctx, grid, cols, rows, cellSize)
+function backtracker(ctx, grid, cols, rows, cellSize)
 {
-
     // Init
     for (let i = 0; i < cols; i++)
     {

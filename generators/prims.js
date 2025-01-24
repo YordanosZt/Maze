@@ -1,4 +1,4 @@
-function prims_generateMaze(ctx, grid, cols, rows, cellSize) 
+function prims(ctx, grid, cols, rows, cellSize) 
 {
     // Init
     for (let i = 0; i < cols; i++)

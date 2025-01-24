@@ -45,13 +45,16 @@ function handleGeneratorEvent(active)
     // Generators
     switch (active) {
         case "backtracker":
-            backtracker_generateMaze(ctx, grid, cols, rows, cellSize);
+            backtracker(ctx, grid, cols, rows, cellSize);
             break;
         case "prims":
-            prims_generateMaze(ctx, grid, cols, rows, cellSize);
+            prims(ctx, grid, cols, rows, cellSize);
             break;
         case "binary":
-            binary_generateMaze(ctx, grid, cols, rows, cellSize);
+            binary(ctx, grid, cols, rows, cellSize);
+            break;
+        case "kruskal":
+            kruskal(ctx, grid, cols, rows, cellSize);
             break;
 
         default:
