@@ -19,38 +19,8 @@ window.onload = () => {
     cols = Math.floor(canvas.width / cellSize);
     rows = Math.floor(canvas.height / cellSize);
 
-    start();
-};
-
-function start() {
     initDOM();
-
-    initGrid();
-
-    requestAnimationFrame(update);
-}
-
-function update() {
-    // Generators
-    switch (activeGenerator) {
-        case "backtracker":
-            backtracker_generateMaze();
-            break;
-        case "prims":
-            prims_generateMaze();
-            break;
-        case "binary":
-            binary_generateMaze();
-            break;
-
-        default:
-            break;
-    }
-
-    draw(ctx, grid, cellSize);
-
-    requestAnimationFrame(update);
-}
+};
 
 function initDOM() {
     generatorBtns = document.querySelectorAll(".gen");
@@ -59,6 +29,7 @@ function initDOM() {
     generatorBtns.forEach((btn) => {
         btn.addEventListener("mousedown", () => {
             activeGenerator = btn.id;
+            handleGeneratorEvent(activeGenerator);
         });
     });
 
@@ -69,29 +40,22 @@ function initDOM() {
     });
 }
 
-function initGrid() {
-    for (let i = 0; i < cols; i++) {
-        grid[i] = [];
+function handleGeneratorEvent(active)
+{
+    // Generators
+    switch (active) {
+        case "backtracker":
+            backtracker_generateMaze(ctx, grid, cols, rows, cellSize);
+            break;
+        case "prims":
+            prims_generateMaze(ctx, grid, cols, rows, cellSize);
+            break;
+        case "binary":
+            binary_generateMaze(ctx, grid, cols, rows, cellSize);
+            break;
 
-        for (let j = 0; j < rows; j++) {
-            // 0 - passage
-            // 1 - wall
-
-            // grid[i][j] = 0;
-            grid[i][j] = i % 2 !== 0 && j % 2 !== 0 ? 0 : 1;
-        }
+        default:
+            break;
     }
 }
 
-function draw(ctx, grid, cellSize) {
-    for (let i = 0; i < cols; i++) {
-        for (let j = 0; j < rows; j++) {
-            ctx.save();
-
-            ctx.fillStyle = grid[i][j] == 0 ? "white" : "black";
-            ctx.fillRect(i * cellSize, j * cellSize, cellSize, cellSize);
-
-            ctx.restore();
-        }
-    }
-}
