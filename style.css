@@ -1,14 +1,17 @@
-* {
+* 
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body 
+{
     height: 100vh;
 }
 
-#mazeCanvas {
+#mazeCanvas 
+{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,21 +20,24 @@ body {
     margin-block: auto;
 }
 
-main {
+main 
+{
     height: 100%;
 
     display: flex;
     justify-content: space-between;
 }
 
-main aside {
+main aside 
+{
     background-color: rgba(173, 194, 194, 0.493);
     border: 2px solid rgb(38, 59, 59);
 
     text-align: center;
 }
 
-main aside .title {
+main aside .title 
+{
     font-family: "Poppins", sans-serif;
 
     padding-block: 10px;
@@ -39,7 +45,8 @@ main aside .title {
     border-bottom: 1px solid rgb(38, 59, 59);
 }
 
-main .list {
+main .list 
+{
     padding: 5px;
 
     width: 300px;
@@ -51,8 +58,8 @@ main .list {
     list-style: none;
 }
 
-main .list .gen button,
-main .list .sol button {
+main .list li button 
+{
     width: 100%;
 
     padding-block: 10px;
@@ -60,6 +67,17 @@ main .list .sol button {
     cursor: pointer;
 }
 
-#mazeCanvas {
+main .list li.unfinished button 
+{
+    background-color: lightgray;
+    color: gray;
+    border: 1px solid gray;
+
+    cursor: default;
+}
+
+#mazeCanvas 
+{
     background-color: black;
 }
+

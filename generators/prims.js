@@ -57,7 +57,7 @@ function prims(ctx, grid, cols, rows, cellSize)
 		{
 			ctx.save();
 
-			ctx.fillStyle = grid[i][j] == 2 ? "royalblue" : grid[i][j] == 0 ? "white" : "#222";
+			ctx.fillStyle = grid[i][j] == 0 ? "white" : "black";
 			ctx.fillRect(i*cellSize, j*cellSize, cellSize, cellSize);
 
 			ctx.restore();

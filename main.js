@@ -22,7 +22,8 @@ window.onload = () => {
     initDOM();
 };
 
-function initDOM() {
+function initDOM() 
+{
     generatorBtns = document.querySelectorAll(".gen");
     solverBtns = document.querySelectorAll(".sol");
 
@@ -53,8 +54,8 @@ function handleGeneratorEvent(active)
         case "binary":
             binary(ctx, grid, cols, rows, cellSize);
             break;
-        case "kruskal":
-            kruskal(ctx, grid, cols, rows, cellSize);
+        case "kruskals":
+            kruskals(ctx, grid, cols, rows, cellSize);
             break;
 
         default:

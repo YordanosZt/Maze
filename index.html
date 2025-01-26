@@ -1,50 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mazes</title>
 
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <main>
-            <aside class="generators">
-                <h1 class="title">Maze Generators</h1>
-                <ul class="list">
-                    <li class="gen" id="backtracker">
-                        <button>Backtracker</button>
-                    </li>
-                    <li class="gen" id="prims">
-                        <button>Prims</button>
-                    </li>
-                    <li class="gen" id="binary">
-                        <button>Binary Tree</button>
-                    </li>
-                </ul>
-            </aside>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mazes</title>
 
-            <canvas id="mazeCanvas" width="610" height="610"></canvas>
+    <link rel="stylesheet" href="style.css" />
+</head>
 
-            <aside class="solvers">
-                <h1 class="title">Maze Solvers</h1>
-                <ul class="list">
-                    <li class="sol" id="wall_follower">
-                        <button>Wall Follower</button>
-                    </li>
-                </ul>
-            </aside>
-        </main>
+<body>
+    <main>
+        <aside class="generators">
+            <h1 class="title">Maze Generators</h1>
+            <ul class="list">
+                <li class="gen" id="backtracker">
+                    <button>Backtracker</button>
+                </li>
+                <li class="gen unfinished" id="kruskals">
+                    <button>Kruskal's</button>
+                </li>
+                <li class="gen" id="prims">
+                    <button>Prim's</button>
+                </li>
+                <li class="gen unfinished" id="aldous-broder">
+                    <button>Aldous-Broder</button>
+                </li>
+                <li class="gen unfinished" id="wilsons">
+                    <button>Wilson's</button>
+                </li>
+                <li class="gen unfinished" id="hunt-and-kill">
+                    <button>Hunt and Kill</button>
+                </li>
+                <li class="gen unfinished" id="growing-tree">
+                    <button>Growing Tree</button>
+                </li>
+                <li class="gen unfinished" id="growing-forest">
+                    <button>Growing Forest</button>
+                </li>
+                <li class="gen unfinished" id="ellers">
+                    <button>Eller's</button>
+                </li>
+                <li class="gen unfinished" id="recursive-division">
+                    <button>Recursive Division</button>
+                </li>
+                <li class="gen" id="binary">
+                    <button>Binary Tree</button>
+                </li>
+                <li class="gen unfinished" id="sidewinder">
+                    <button>Sidewinder</button>
+                </li>
+            </ul>
+        </aside>
 
-        <!-- Main Script /-->
-        <script src="main.js"></script>
+        <canvas id="mazeCanvas" width="610" height="610"></canvas>
 
-        <!-- Utility Script -->
-        <script src="utilities.js"></script>
+        <aside class="solvers">
+            <h1 class="title">Maze Solvers</h1>
+            <ul class="list">
+                <li class="sol unfinished" id="wall-follower">
+                    <button>Wall Follower</button>
+                </li>
+                <li class="sol unfinished" id="pledge">
+                    <button>Pledge</button>
+                </li>
+                <li class="sol unfinished" id="Chain">
+                    <button>Chain</button>
+                </li>
+                <li class="sol unfinished" id="backtracker">
+                    <button>Backtracker</button>
+                </li>
+                <li class="sol unfinished" id="tremauxs">
+                    <button>Tremaux's</button>
+                </li>
+                <li class="sol unfinished" id="dead-end-filler">
+                    <button>Dead End Filler</button>
+                </li>
+                <li class="sol unfinished" id="Cul-de-sac-filler">
+                    <button>Cul-de-sac Filler</button>
+                </li>
+                <li class="sol unfinished" id="blind-alley-filler">
+                    <button>Blind Alley Filler</button>
+                </li>
+                <li class="sol unfinished" id="blind-alley-sealer">
+                    <button>Blind Alley Sealer</button>
+                </li>
+                <li class="sol unfinished" id="a-star">
+                    <button>A*</button>
+                </li>
+                <li class="sol unfinished" id="collision-solver">
+                    <button>Collision Solver</button>
+                </li>
+                <li class="sol unfinished" id="random-mouse">
+                    <button>Random Mouse</button>
+                </li>
+            </ul>
+        </aside>
+    </main>
 
-        <!-- Maze Scripts /-->
-        <script src="./generators/backtracker.js"></script>
-        <script src="./generators/prims.js"></script>
-        <script src="./generators/binary.js"></script>
-    </body>
+    <!-- Main Script /-->
+    <script src="main.js"></script>
+
+    <!-- Utility Script -->
+    <script src="utilities.js"></script>
+
+    <!-- Maze Scripts /-->
+    <script src="./generators/backtracker.js"></script>
+    <script src="./generators/prims.js"></script>
+    <script src="./generators/binary.js"></script>
+    <script src="./generators/kruskals.js"></script>
+</body>
+
 </html>
